@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Country Page</title>
+  <link rel="stylesheet" href="styles/place.css" />
+  <script src="scripts/place.js" defer></script>
+</head>
+<body>
+  <header>
+    <h1>Welcome to Kenya</h1>
+  </header>
+
+  <main>
+    <section class="hero">
+      <picture>
+        <source srcset="images/nairobi-view.webp" media="(min-width: 600px)">
+        <img src="images/hero-small.webp" alt="Scenic view of country" loading="lazy">
+      </picture>
+    </section>
+
+    <section class="weather">
+      <h2>Weather <span class="emoji"></span></h2>
+      <img src="images/weather-icon.svg" alt="Weather icon" class="icon">
+      <p>Temperature: <span id="temperature">45</span>°F</p>
+      <p>Wind Speed: <span id="wind-speed">10</span> mph</p>
+      <p>Wind Chill: <span id="windchill">Loading...</span></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> | Last Modified: <span id="lastModified"></span></p>
+  </footer>
+</body>
+</html>
