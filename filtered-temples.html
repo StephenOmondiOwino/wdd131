@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Temple Album</title>
+  <link rel="stylesheet" href="styles/temple.css" />
+  <link rel="stylesheet" href="styles/temple-large.css" media="screen and (min-width: 768px)" />
+  <script src="scripts/temples.js" defer></script>
+  <link rel="stylesheet" href="filtered-styles.css">
+<script src="filtered-scripts.js" defer></script>
+
+</head>
+<body>
+  <header>
+    <h1>Temple Album</h1>
+    <button id="menu">☰</button>
+    <nav class="navigation">
+      <a href="#">Home</a>
+      <a href="#">Old</a>
+      <a href="#">New</a>
+      <a href="#">Large</a>
+      <a href="#">Small</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Temples</h1>
+    <div class="gallery">
+      <!-- Example -->
+      <figure>
+        <img src="images/temple1.jpg" alt="Nairobi Temple" />
+        <figcaption>Nairobi Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple2.jpg" alt="Ghana Accra Temple">
+        <figcaption>Accra Ghana Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple3.jpg" alt="Aba Nigeria Temple">
+        <figcaption>Aba Nigeria Temple</figcaption>
+      </figure>
+      <figure>
+        <img src="images/temple4.jpg" alt="Kinshasa Temple">
+        <figcaption>Kinshasa Temple</figcaption>
+      </figure>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="year"></span> Stephen Omondi Owino | Kenya</p>
+    <p id="lastModified"></p>
+  </footer>
+</body>
+</html>
+
+<nav>
+  <button onclick="filterTemples('all')">Home</button>
+  <button onclick="filterTemples('old')">Old</button>
+  <button onclick="filterTemples('new')">New</button>
+  <button onclick="filterTemples('large')">Large</button>
+  <button onclick="filterTemples('small')">Small</button>
+</nav>
