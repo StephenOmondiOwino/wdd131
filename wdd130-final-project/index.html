@@ -1,0 +1,164 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore Kenya's beautiful destinations, culture, and wildlife." />
+  <title>Discover Kenya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Discover Kenya</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Welcome to Kenya</h2>
+      <p>Kenya is known for its scenic landscapes and vast wildlife preserves. Explore the beautiful national parks, cities, and cultural experiences.</p>
+      <img src="images/kenya.jpg" alt="Kenya Landscape" loading="lazy" />
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Discover Kenya | <a href="references.html">References</a></p>
+  </footer>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
+
+<!-- destinations.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Top travel destinations in Kenya." />
+  <title>Destinations - Discover Kenya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Discover Kenya</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Top Destinations</h2>
+    <ul id="destination-list"></ul>
+  </main>
+  <footer>
+    <p>&copy; 2025 Discover Kenya | <a href="references.html">References</a></p>
+  </footer>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
+
+<!-- contact.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Contact Discover Kenya." />
+  <title>Contact - Discover Kenya</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Discover Kenya</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="destinations.html">Destinations</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+      <label for="interest">Area of Interest:</label>
+      <select id="interest" name="interest">
+        <option value="wildlife">Wildlife</option>
+        <option value="culture">Culture</option>
+        <option value="coast">Coastal</option>
+      </select>
+      <label>
+        <input type="checkbox" name="subscribe" /> Subscribe to newsletter
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+    <p id="confirmation"></p>
+  </main>
+  <footer>
+    <p>&copy; 2025 Discover Kenya | <a href="references.html">References</a></p>
+  </footer>
+  <script src="script.js" type="module"></script>
+</body>
+</html>
+
+<!-- references.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>References</title>
+</head>
+<body>
+  <h2>References</h2>
+  <ul>
+    <li>Image source: <a href="https://unsplash.com/s/photos/kenya">Unsplash - Kenya</a></li>
+    <li>Travel information: <a href="https://www.magicalkenya.com/">Magical Kenya</a></li>
+  </ul>
+</body>
+</html>
+
+/* style.css */
+
+
+// script.js
+const destinations = [
+  { name: "Maasai Mara", region: "Rift Valley" },
+  { name: "Diani Beach", region: "Coast" },
+  { name: "Mount Kenya", region: "Central" },
+];
+
+function displayDestinations() {
+  const list = document.getElementById("destination-list");
+  if (!list) return;
+  list.innerHTML = "";
+  destinations.forEach((dest) => {
+    const li = document.createElement("li");
+    li.textContent = `${dest.name} - ${dest.region}`;
+    list.appendChild(li);
+  });
+}
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+  const name = document.getElementById("name").value;
+  localStorage.setItem("lastSubmission", name);
+  document.getElementById("confirmation").textContent = `Thank you, ${name}, we will be in touch soon!`;
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  displayDestinations();
+  const form = document.getElementById("contactForm");
+  if (form) form.addEventListener("submit", handleFormSubmit);
+});
